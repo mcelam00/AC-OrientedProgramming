@@ -1,5 +1,6 @@
 #ifndef PERSON_H
 #define PERSON_H
+//probando qt con github
 
 #include <iostream>//para poder usar strings, sino no existen y serian char*
 
