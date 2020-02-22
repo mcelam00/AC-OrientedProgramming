@@ -22,7 +22,7 @@ public:
     void AsignarNota(Student alumno, float nota1, float nota2);
     void AsignarNota(Student alumno, float nota1, float nota2, float nota3);
 
-    float ObtenerNotaMedia();
+    float ObtenerNotaMedia(Student alumno);
 
     void ImprimirListaYMedia();
     void ImprimirAlumnoMejorNota();

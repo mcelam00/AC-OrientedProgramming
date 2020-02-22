@@ -33,13 +33,33 @@ void Teacher::AsignarNota(Student alumno, float nota1, float nota2, float nota3)
     alumno.setNota(nota3);
 }
 
-float Teacher::ObtenerNotaMedia()
+float Teacher::ObtenerNotaMedia(Student alumno)
 {
+    //se trae la lista de notas del alumno y se calcula su sumatorio
+    float sumaTotalNotas = 0;
+    int tamanioListaNotas = (int)alumno.getListaNotas().size(); //casteo a entero el size de la lista que se me devuelve de ese alumno
 
+    //recorro la lista de notas del alumno que se me pasa como parametro
+    for(int i = 0; i < tamanioListaNotas; i++){
+
+        sumaTotalNotas = sumaTotalNotas + alumno.getNota(i); //saco cada nota y la sumo al total acumulado
+
+    }
+
+    //se trae el total de notas para saber si tiene 1, 2 o 3
+
+    int numeroDeNotas = alumno.getNumeroTotalDeNotas();
+
+    float media = 0;
+
+    media = (sumaTotalNotas/numeroDeNotas);
+
+    return media;
 }
 
 void Teacher::ImprimirListaYMedia()
 {
+
 
 }
 
