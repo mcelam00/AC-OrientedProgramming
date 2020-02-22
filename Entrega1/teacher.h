@@ -3,8 +3,12 @@
 
 #include "person.h" //incluye su clase padre
 
+
 class Teacher : public Person
 {
+private:
+    vector<Student> listaAlumnos;
+
 public:
     Teacher();
     ~Teacher();

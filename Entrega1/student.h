@@ -22,7 +22,7 @@ public:
 
     /* OTRAS FUNCIONES */
 
-    float obtenerNota(int posicion); //es el getter ¿?
+  //  float obtenerNota(int posicion); //es el getter ¿?
 
 
 };
