@@ -12,8 +12,7 @@ Student::~Student()
 
 float Student::getNota(int numeroDeNotaEnLista)
 {
-
-
+    return this->listaNotas[numeroDeNotaEnLista];
 }
 
 void Student::setNota(float nota)
