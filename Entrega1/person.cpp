@@ -31,3 +31,11 @@ string Person::getDNI()
 {
   return this->DNI;
 }
+
+void Person::ImprimirDatosPersonales()
+{
+    //pinto los datos personales
+    cout << "Nombre : " << this->nombre << "    Apellidos : " << this->apellidos << "    DNI : " << this->DNI << endl;
+
+
+}

@@ -64,8 +64,7 @@ void Teacher::ImprimirListaYMedia()
     //recorro los alumnos del profesor
     for(int i = 0; i < (int)this->listaAlumnos.size(); i++)
     {
-        //pinto los datos personales
-        cout << "Nombre : " << listaAlumnos[i].getNombre() << "    Apellidos : " << listaAlumnos[i].getApellidos() << "    DNI : " << listaAlumnos[i].getDNI() << endl;
+        listaAlumnos[i].ImprimirDatosPersonales(); //Método de la clase padre que pinta los datos
 
         //pinto las notas
         cout << "Notas : ";

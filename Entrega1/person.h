@@ -27,7 +27,9 @@ public:
     string getApellidos();
     string getDNI();
 
+    /* OTRAS FUNCIONES */
 
+    void ImprimirDatosPersonales();
 
 };
 
