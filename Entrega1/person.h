@@ -12,13 +12,13 @@ class Person
 {
 
 private:    //Atributos
-   string name;
-   string surname;
+   string nombre;
+   string apellidos;
    string DNI;
 
 public:
     Person(); //Constructor por defecto
-    Person(string name, string surname, string DNI); //Constructor sobrecargado
+    Person(string nombre, string apellidos, string DNI); //Constructor sobrecargado
     ~Person(); //cleaner
 
 
