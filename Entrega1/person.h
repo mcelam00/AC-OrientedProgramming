@@ -19,7 +19,7 @@ private:    //Atributos
 public:
     Person(); //Constructor por defecto
     Person(string name, string surname, string DNI); //Constructor sobrecargado
-
+    ~Person(); //cleaner
 
 
 
