@@ -11,7 +11,7 @@ Student::~Student()
 }
 
 float Student::getNota(int numeroDeNotaEnLista)
-{☻
+{
 
 
 }
