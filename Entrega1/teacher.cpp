@@ -59,11 +59,38 @@ float Teacher::ObtenerNotaMedia(Student alumno)
 
 void Teacher::ImprimirListaYMedia()
 {
+    cout << "LISTADO DE ALUMNOS" << endl;
 
+    //recorro los alumnos del profesor
+    for(int i = 0; i < (int)this->listaAlumnos.size(); i++){
+       cout << "Nombre :" << listaAlumnos[i];
+
+        //DUDA sacar el nombre de un alumno y todos los demas datos!!!
+
+    }
 
 }
 
 void Teacher::ImprimirAlumnoMejorNota()
 {
+    //buscamos el alumno con mejor nota entre los alumnos con 3 notas
+
+    int notaMediaMasAlta = 0;
+    string nombreAlumno;
+
+    for(int i = 0; i < (int)this->listaAlumnos.size(); i++){
+
+        int mediaAlumno = this->ObtenerNotaMedia(this->listaAlumnos[i]);
+
+            if(mediaAlumno > notaMediaMasAlta){
+                notaMediaMasAlta = mediaAlumno;
+                nombreAlumno = this->listaAlumnos[i]. //DUDA ACCEDER AL NOMBRE
+            }
+
+
+    }
+
+    cout << "El Alumno con mejor nota es: " << nombreAlumno << " con nota media = " << notaMediaMasAlta << endl;
+
 
 }
