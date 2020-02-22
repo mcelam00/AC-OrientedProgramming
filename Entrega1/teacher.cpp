@@ -64,10 +64,22 @@ void Teacher::ImprimirListaYMedia()
     //recorro los alumnos del profesor
     for(int i = 0; i < (int)this->listaAlumnos.size(); i++)
     {
-       cout << "Nombre :" << listaAlumnos[i];
+        //pinto los datos personales
+        cout << "Nombre : " << listaAlumnos[i].getNombre() << "    Apellidos : " << listaAlumnos[i].getApellidos() << "    DNI : " << listaAlumnos[i].getDNI() << endl;
 
-        //DUDA sacar el nombre de un alumno y todos los demas datos!!!
-        //ACCEDER A EL GETTER DE LA CLASE PADRE DESDE LA HIJO
+        //pinto las notas
+        cout << "Notas : ";
+        for(int i = 0; i < (int)listaAlumnos[i].getListaNotas().size();i++) //recorro lista notas de cada alumno
+        {
+            cout << listaAlumnos[i].getNota(i) << "  ";
+        }
+
+        cout << endl;
+
+        //pinto la media
+       double media = ObtenerNotaMedia(listaAlumnos[i]);
+       cout << "Media : " << media << endl;
+
     }
 
 }
@@ -91,7 +103,7 @@ void Teacher::ImprimirAlumnoMejorNota()
                 if(mediaAlumno > notaMediaMasAlta)
                 {
                      notaMediaMasAlta = mediaAlumno;
-                     nombreAlumno = this->listaAlumnos[i]::getNo //DUDA ACCEDER AL NOMBRE
+                     nombreAlumno = this->listaAlumnos[i].getNombre(); //DUDA ACCEDER AL NOMBRE SE PUEDE HACER¿? AL SER DE LA CLASE PADRE¿
 
                 }
 
