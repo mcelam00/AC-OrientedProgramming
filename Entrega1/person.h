@@ -10,6 +10,12 @@ using namespace std;
 
 class Person
 {
+
+private:    //Atributos
+   string name;
+   string surname;
+   string DNI;
+
 public:
     Person(); //Constructor por defecto
     Person(string name, string surname, string DNI); //Constructor sobrecargado
