@@ -27,5 +27,5 @@ vector<float> Student::getListaNotas()
 
 int Student::getNumeroTotalDeNotas()
 {
-
+    return this->listaNotas.size();
 }
