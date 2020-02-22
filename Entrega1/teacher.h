@@ -18,14 +18,14 @@ public:
 
     /* OTRAS FUNCIONES */
 
-    void asignarNota(float nota1);   //sobrecargado para asignar 1, 2 o 3 notas según corresponda
-    void asignarNota(float nota1, float nota2);
-    void asignarNota(float nota1, float nota2, float nota3);
+    void AsignarNota(float nota1);   //sobrecargado para asignar 1, 2 o 3 notas según corresponda
+    void AsignarNota(float nota1, float nota2);
+    void AsignarNota(float nota1, float nota2, float nota3);
 
-    float obtenerNotaMedia();
+    float ObtenerNotaMedia();
 
-    void imprimirListaYMedia();
-    void imprimirAlumnoMejorNota();
+    void ImprimirListaYMedia();
+    void ImprimirAlumnoMejorNota();
 };
 
 #endif // TEACHER_H

@@ -2,8 +2,6 @@
 
 int main()
 {
-
-
-
-
+    Calificando();
+    return 0;
 }
