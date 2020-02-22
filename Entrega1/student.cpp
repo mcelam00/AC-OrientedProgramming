@@ -22,7 +22,7 @@ void Student::setNota(float nota)
 
 vector<float> Student::getListaNotas()
 {
-
+    return this->listaNotas;
 }
 
 int Student::getNumeroTotalDeNotas()
