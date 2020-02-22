@@ -17,7 +17,7 @@ public:
 
     float getNota(int numeroDeNotaEnLista);
     void setNota(float nota); //en la ultima posicion del vector
-    vector<float> getlistaNotas();//con un for y el primero puedo prescindir de este ¿?
+    vector<float> getListaNotas();//con un for y el primero puedo prescindir de este ¿?
     int getNumeroTotalDeNotas();
 
     /* OTRAS FUNCIONES */
