@@ -85,12 +85,13 @@ void Teacher::ImprimirAlumnoMejorNota()
         if(this->listaAlumnos[i].getListaNotas().size() == 3) //de entre los alumnos con 3 notas
         {
             int mediaAlumno = this->ObtenerNotaMedia(this->listaAlumnos[i]);
+            //creo un puntero a la clase padre
 
 
                 if(mediaAlumno > notaMediaMasAlta)
                 {
                      notaMediaMasAlta = mediaAlumno;
-                     nombreAlumno = this->listaAlumnos[i] //DUDA ACCEDER AL NOMBRE
+                     nombreAlumno = this->listaAlumnos[i]::getNo //DUDA ACCEDER AL NOMBRE
 
                 }
 

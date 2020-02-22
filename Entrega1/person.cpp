@@ -17,3 +17,17 @@ Person::~Person()
 
 }
 
+string Person::getNombre()
+{
+    return this->nombre;
+}
+
+string Person::getApellidos()
+{
+    return this->apellidos;
+}
+
+string Person::getDNI()
+{
+  return this->DNI;
+}

@@ -21,16 +21,11 @@ public:
     Person(string nombre, string apellidos, string DNI); //Constructor sobrecargado
     ~Person(); //cleaner
 
+    /* GETTERS */
 
-
-
-
-
-
-
-
-
-
+    string getNombre();
+    string getApellidos();
+    string getDNI();
 
 
 
