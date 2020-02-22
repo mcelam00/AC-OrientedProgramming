@@ -12,7 +12,7 @@ Teacher::~Teacher()
 
 void Teacher::setNuevoAlumnoEnLista(Student alumno)
 {
-
+    this->listaAlumnos.push_back(alumno);
 }
 
 void Teacher::AsignarNota(float nota1)
