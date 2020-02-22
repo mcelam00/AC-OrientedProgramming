@@ -18,9 +18,9 @@ public:
 
     /* OTRAS FUNCIONES */
 
-    void AsignarNota(float nota1);   //sobrecargado para asignar 1, 2 o 3 notas según corresponda
-    void AsignarNota(float nota1, float nota2);
-    void AsignarNota(float nota1, float nota2, float nota3);
+    void AsignarNota(Student alumno, float nota1);   //sobrecargado para asignar 1, 2 o 3 notas según corresponda
+    void AsignarNota(Student alumno, float nota1, float nota2);
+    void AsignarNota(Student alumno, float nota1, float nota2, float nota3);
 
     float ObtenerNotaMedia();
 
