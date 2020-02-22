@@ -40,8 +40,8 @@ float Teacher::ObtenerNotaMedia(Student alumno)
     int tamanioListaNotas = (int)alumno.getListaNotas().size(); //casteo a entero el size de la lista que se me devuelve de ese alumno
 
     //recorro la lista de notas del alumno que se me pasa como parametro
-    for(int i = 0; i < tamanioListaNotas; i++){
-
+    for(int i = 0; i < tamanioListaNotas; i++)
+    {
         sumaTotalNotas = sumaTotalNotas + alumno.getNota(i); //saco cada nota y la sumo al total acumulado
 
     }
@@ -62,11 +62,12 @@ void Teacher::ImprimirListaYMedia()
     cout << "LISTADO DE ALUMNOS" << endl;
 
     //recorro los alumnos del profesor
-    for(int i = 0; i < (int)this->listaAlumnos.size(); i++){
+    for(int i = 0; i < (int)this->listaAlumnos.size(); i++)
+    {
        cout << "Nombre :" << listaAlumnos[i];
 
         //DUDA sacar el nombre de un alumno y todos los demas datos!!!
-
+        //ACCEDER A EL GETTER DE LA CLASE PADRE DESDE LA HIJO
     }
 
 }
@@ -78,16 +79,22 @@ void Teacher::ImprimirAlumnoMejorNota()
     int notaMediaMasAlta = 0;
     string nombreAlumno;
 
-    for(int i = 0; i < (int)this->listaAlumnos.size(); i++){
+    for(int i = 0; i < (int)this->listaAlumnos.size(); i++)
+    {
 
-        int mediaAlumno = this->ObtenerNotaMedia(this->listaAlumnos[i]);
-
-            if(mediaAlumno > notaMediaMasAlta){
-                notaMediaMasAlta = mediaAlumno;
-                nombreAlumno = this->listaAlumnos[i]. //DUDA ACCEDER AL NOMBRE
-            }
+        if(this->listaAlumnos[i].getListaNotas().size() == 3) //de entre los alumnos con 3 notas
+        {
+            int mediaAlumno = this->ObtenerNotaMedia(this->listaAlumnos[i]);
 
 
+                if(mediaAlumno > notaMediaMasAlta)
+                {
+                     notaMediaMasAlta = mediaAlumno;
+                     nombreAlumno = this->listaAlumnos[i] //DUDA ACCEDER AL NOMBRE
+
+                }
+
+        }
     }
 
     cout << "El Alumno con mejor nota es: " << nombreAlumno << " con nota media = " << notaMediaMasAlta << endl;
