@@ -48,24 +48,15 @@ void Calificando()
         juanjo.AsignarNota(luis, 10, 10, 10);
 
             //se obtienen las medias de los alumnos
-
-        cout << "las medias son" <<endl;
-
-        cout << juanjo.ObtenerNotaMedia(pepito) << endl;
-        cout << juanjo.ObtenerNotaMedia(jaimito) << endl;
-        cout << juanjo.ObtenerNotaMedia(jorge) << endl;
-        cout << juanjo.ObtenerNotaMedia(luis) << endl;
-
-
-
+        juanjo.ObtenerNotaMedia(pepito);
+        juanjo.ObtenerNotaMedia(jaimito);
+        juanjo.ObtenerNotaMedia(jorge);
+        juanjo.ObtenerNotaMedia(luis);
 
 
         /* APARTADO DE IMPRESION */
-/*
+
         juanjo.ImprimirListaYMedia();
-        juanjo.ImprimirAlumnoMejorNota();
-
-
 
 
 

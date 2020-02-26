@@ -16,15 +16,15 @@ public:
 
     /* GETTERS Y SETTERS*/
 
-    float getNota(int numeroDeNotaEnLista);
     void setNota(float nota); //en la ultima posicion del vector
     int getNumeroTotalDeNotas();
-    float getNotaMedia();
 
 
     /* OTRAS FUNCIONES */
 
     void CalcularMedia();
+    void ImprimirTodasNotas();
+    void ImprimirNotaMedia();
 
 
 };

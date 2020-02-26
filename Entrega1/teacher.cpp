@@ -36,33 +36,32 @@ void Teacher::AsignarNota(Student *alumno, float nota1, float nota2, float nota3
 float Teacher::ObtenerNotaMedia(Student *alumno)
 {
     alumno->CalcularMedia(); //si hace falta repetir el parametro o puede usarse this
-    return alumno->getNotaMedia();
 }
 
 void Teacher::ImprimirListaYMedia()
 {
-/*    cout << "LISTADO DE ALUMNOS" << endl;
+    //Imprimo los datos del profesor
+
+    cout << "<<<<<<<<<<<<<<<< PROFESOR >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << endl;
+
+    this->ImprimirDatosPersonales();
+    cout << endl;
+
+
+    //imprimo a todos sus alumnos
+    cout << "<<<<<<<<<<<<<<<< LISTADO DE ALUMNOS >>>>>>>>>>>>>>>>>>>>>>" << endl;
 
     //recorro los alumnos del profesor
     for(int i = 0; i < (int)this->listaAlumnos.size(); i++)
     {
-        listaAlumnos[i].ImprimirDatosPersonales(); //Método de la clase padre que pinta los datos
-
-        //pinto las notas
-        cout << "Notas : ";
-        for(int i = 0; i < (int)listaAlumnos[i].getListaNotas().size();i++) //recorro lista notas de cada alumno
-        {
-            cout << listaAlumnos[i].getNota(i) << "  ";
-        }
-
-        cout << endl;
-
-        //pinto la media
-       double media = this->ObtenerNotaMedia(listaAlumnos[i]);
-       cout << "Media : " << media << endl;
+        listaAlumnos[i]->ImprimirDatosPersonales(); //de cada alumno pinto sus datos tambien
+        listaAlumnos[i]->ImprimirTodasNotas(); //De c/u de la lista pinto sus notas
+        listaAlumnos[i]->ImprimirNotaMedia(); //De c/u del vector del profesor pinto la media
 
     }
-*/
+
+     cout << "---------------------------------------------------------------------------------" << endl;
+
 }
 
 void Teacher::ImprimirAlumnoMejorNota()
