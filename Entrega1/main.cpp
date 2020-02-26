@@ -24,10 +24,10 @@ void Calificando()
             //Como el espacio en la pila es pequeño, si creo un objeto sin reservar memoria dinamicamente, el objeto se crea en el stack (que no tiene unas dimensiones muy grandes), si utilizo el new sin embargo, el objeto lo creo en el Heap que tiene muchisimo mas espacio que la pila y solamente retengo en la pila el puntero al objeto de manera que es mas eficiente por ejemplo de cara a llamadas recursivas en las que si lo hacemos sin new, stackOverflow, ademas, al usar polimorfismo debemos usar new
             //ademas como no sé el numero de estudiantes que voy a tener, no puedo crear tropecientos sin new porque lleno la pila
 
-        Student *pepito1 = new Student("Pepito1","Perez","33997755F");
-        Student *pepito2 = new Student("Pepito2","Perez","12997755F");
-        Student *pepito3 = new Student("Pepito3","Perez","10997755F");
-        Student *pepito4 = new Student("Pepito4","Perez","30997755F");
+        Student *pepito = new Student("pepito","Perez","33997755F");
+        Student *jaimito = new Student("jaimito","Perez","12997755F");
+        Student *jorge = new Student("jorge","Perez","10997755F");
+        Student *luis = new Student("luis","Perez","30997755F");
 
 
 
@@ -35,15 +35,29 @@ void Calificando()
         Teacher juanjo("Juanjo", "Campos", "12346600L");
 
 
-            //añado los alumnos a juanjo
+            //se añaden los alumnos al profesor
+        juanjo.setNuevoAlumnoEnLista(pepito);
+        juanjo.setNuevoAlumnoEnLista(jaimito);
+        juanjo.setNuevoAlumnoEnLista(jorge);
+        juanjo.setNuevoAlumnoEnLista(luis);
+
+            //se les asignan a los alumnos sus notas
+        juanjo.AsignarNota(pepito, 8.7);
+        juanjo.AsignarNota(jaimito, 8.7, 9.1);
+        juanjo.AsignarNota(jorge, 4.0, 3.2, 7.9);
+        juanjo.AsignarNota(luis, 10, 10, 10);
+
+            //se obtienen las medias de los alumnos
+
+        cout << "las medias son" <<endl;
+
+        cout << juanjo.ObtenerNotaMedia(pepito) << endl;
+        cout << juanjo.ObtenerNotaMedia(jaimito) << endl;
+        cout << juanjo.ObtenerNotaMedia(jorge) << endl;
+        cout << juanjo.ObtenerNotaMedia(luis) << endl;
 
 
 
-      /*  juanjo.setNuevoAlumnoEnLista(pepito1);
-        juanjo.setNuevoAlumnoEnLista(pepito2);
-        juanjo.setNuevoAlumnoEnLista(pepito3);
-        juanjo.setNuevoAlumnoEnLista(pepito4);
-        juanjo.ObtenerNotaMedia(pepito1);
 
 
         /* APARTADO DE IMPRESION */
@@ -81,7 +95,10 @@ void Calificando()
 
            /* APARTADO DE DESTRUCCION */
 
-    delete pepito1;
+        delete pepito;
+        delete jaimito;
+        delete jorge;
+        delete luis;
 
 
 

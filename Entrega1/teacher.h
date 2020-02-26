@@ -7,22 +7,22 @@
 class Teacher : public Person
 {
 private:
-    vector<Student> listaAlumnos;
+    vector<Student *> listaAlumnos;
 
 public:
     Teacher(string nombre, string apellidos, string DNI);
     ~Teacher();
 
     /* GETTERS Y SETTERS */
-    void setNuevoAlumnoEnLista(Student alumno);
+    void setNuevoAlumnoEnLista(Student *alumno);
 
     /* OTRAS FUNCIONES */
 
-    void AsignarNota(Student alumno, float nota1);   //sobrecargado para asignar 1, 2 o 3 notas según corresponda
-    void AsignarNota(Student alumno, float nota1, float nota2);
-    void AsignarNota(Student alumno, float nota1, float nota2, float nota3);
+    void AsignarNota(Student *alumno, float nota1);   //sobrecargado para asignar 1, 2 o 3 notas según corresponda
+    void AsignarNota(Student *alumno, float nota1, float nota2);
+    void AsignarNota(Student *alumno, float nota1, float nota2, float nota3);
 
-    float ObtenerNotaMedia(Student alumno);
+    float ObtenerNotaMedia(Student *alumno);
 
     void ImprimirListaYMedia();
     void ImprimirAlumnoMejorNota();
