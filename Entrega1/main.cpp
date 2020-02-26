@@ -21,17 +21,23 @@ void Calificando()
 
         /* APARTADO CREACIÓN DE OBJETOS Y CÁLCULOS */
 
+            //Como el espacio en la pila es pequeño, si creo un objeto sin reservar memoria dinamicamente, el objeto se crea en el stack (que no tiene unas dimensiones muy grandes), si utilizo el new sin embargo, el objeto lo creo en el Heap que tiene muchisimo mas espacio que la pila y solamente retengo en la pila el puntero al objeto de manera que es mas eficiente por ejemplo de cara a llamadas recursivas en las que si lo hacemos sin new, stackOverflow, ademas, al usar polimorfismo debemos usar new
+            //ademas como no sé el numero de estudiantes que voy a tener, no puedo crear tropecientos sin new porque lleno la pila
 
-       // Student pepito = new  Student("Pepito","Perez","71673499P");
         Student *pepito1 = new Student("Pepito1","Perez","33997755F");
-        //Student pepito2("Pepito2","Gómez","33991155h");
-        //Student pepito3("Pepito3","Ruíz","33057755l");
-       // Student pepito4("Pepito4","Sal","88997755p");
+        Student *pepito2 = new Student("Pepito2","Perez","12997755F");
+        Student *pepito3 = new Student("Pepito3","Perez","10997755F");
+        Student *pepito4 = new Student("Pepito4","Perez","30997755F");
 
-        //Teacher *juanjo = new Teacher("Juanjo", "Campos", "12346600L");
-        //juanjo->AsignarNota(pepito2, 9);
-       //float valor = juanjo->ObtenerNotaMedia(pepito2);
-       // cout << valor <<endl;
+
+
+            //como solo creo un profesor (en el enunciado se especifica "del profesor") entonces lo hago sin new y me ahorro las reservas de memoria y aprovecho los recursos del compilador para optimizar el objeto al ser éste estático
+        Teacher juanjo("Juanjo", "Campos", "12346600L");
+
+
+            //añado los alumnos a juanjo
+
+
 
       /*  juanjo.setNuevoAlumnoEnLista(pepito1);
         juanjo.setNuevoAlumnoEnLista(pepito2);
@@ -72,6 +78,13 @@ void Calificando()
         }while(entradaCorrecta == true);
 
 */
+
+           /* APARTADO DE DESTRUCCION */
+
+    delete pepito1;
+
+
+
 }
 
 
