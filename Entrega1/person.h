@@ -2,7 +2,7 @@
 #define PERSON_H
 
 
-#include <iostream>//para poder usar strings, sino no existen y serian char*
+#include <iostream>
 #include <string>
 #include <vector>
 

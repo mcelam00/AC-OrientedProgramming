@@ -1,13 +1,13 @@
 #include "teacher.h"
-
-Teacher::Teacher()
+                                                              //llamo al constructor de arriba con los parametros que se le pasan a este
+Teacher::Teacher(string nombre, string apellidos, string DNI):Person(nombre, apellidos, DNI) //estoy creando un objeto persona llamando al constructor de la superclase que es Persona por eso lo de los :
 {
-
+//aqui irian las modificaciones, lo que tengo que cambiar, de la clase actual, no de person
 }
 
 Teacher::~Teacher()
 {
-
+    //no hay ningun atributo (p.ej tipo puntero que deba ser destruido)
 }
 
 void Teacher::setNuevoAlumnoEnLista(Student alumno)
@@ -35,31 +35,13 @@ void Teacher::AsignarNota(Student alumno, float nota1, float nota2, float nota3)
 
 float Teacher::ObtenerNotaMedia(Student alumno)
 {
-    //se trae la lista de notas del alumno y se calcula su sumatorio
-    float sumaTotalNotas = 0;
-    int tamanioListaNotas = (int)alumno.getListaNotas().size(); //casteo a entero el size de la lista que se me devuelve de ese alumno
-
-    //recorro la lista de notas del alumno que se me pasa como parametro
-    for(int i = 0; i < tamanioListaNotas; i++)
-    {
-        sumaTotalNotas = sumaTotalNotas + alumno.getNota(i); //saco cada nota y la sumo al total acumulado
-
-    }
-
-    //se trae el total de notas para saber si tiene 1, 2 o 3
-
-    int numeroDeNotas = alumno.getNumeroTotalDeNotas();
-
-    float media = 0;
-
-    media = (sumaTotalNotas/numeroDeNotas);
-
-    return media;
+    alumno.CalcularMedia(); //si hace falta repetir el parametro o puede usarse this
+    return alumno.getNotaMedia();
 }
 
 void Teacher::ImprimirListaYMedia()
 {
-    cout << "LISTADO DE ALUMNOS" << endl;
+/*    cout << "LISTADO DE ALUMNOS" << endl;
 
     //recorro los alumnos del profesor
     for(int i = 0; i < (int)this->listaAlumnos.size(); i++)
@@ -76,16 +58,16 @@ void Teacher::ImprimirListaYMedia()
         cout << endl;
 
         //pinto la media
-       double media = ObtenerNotaMedia(listaAlumnos[i]);
+       double media = this->ObtenerNotaMedia(listaAlumnos[i]);
        cout << "Media : " << media << endl;
 
     }
-
+*/
 }
 
 void Teacher::ImprimirAlumnoMejorNota()
 {
-    //buscamos el alumno con mejor nota entre los alumnos con 3 notas
+ /*   //buscamos el alumno con mejor nota entre los alumnos con 3 notas
 
     int notaMediaMasAlta = 0;
     string nombreAlumno;
@@ -111,5 +93,6 @@ void Teacher::ImprimirAlumnoMejorNota()
 
     cout << "El Alumno con mejor nota es: " << nombreAlumno << " con nota media = " << notaMediaMasAlta << endl;
 
-
+*/
 }
+

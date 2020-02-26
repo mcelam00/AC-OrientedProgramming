@@ -10,7 +10,7 @@ private:
     vector<Student> listaAlumnos;
 
 public:
-    Teacher();
+    Teacher(string nombre, string apellidos, string DNI);
     ~Teacher();
 
     /* GETTERS Y SETTERS */
