@@ -60,38 +60,35 @@ void Teacher::ImprimirListaYMedia()
 
     }
 
-     cout << "---------------------------------------------------------------------------------" << endl;
+
 
 }
 
 void Teacher::ImprimirAlumnoMejorNota()
 {
- /*   //buscamos el alumno con mejor nota entre los alumnos con 3 notas
+  //buscamos el alumno con mejor nota entre los alumnos con 3 notas
 
-    int notaMediaMasAlta = 0;
+    float notaMediaMasAlta = 0.00;
     string nombreAlumno;
 
     for(int i = 0; i < (int)this->listaAlumnos.size(); i++)
     {
 
-        if(this->listaAlumnos[i].getListaNotas().size() == 3) //de entre los alumnos con 3 notas
+        if(this->listaAlumnos[i]->getNumeroTotalDeNotas() == 3) //de entre los alumnos con 3 notas
         {
-            int mediaAlumno = this->ObtenerNotaMedia(this->listaAlumnos[i]);
-            //creo un puntero a la clase padre
 
-
-                if(mediaAlumno > notaMediaMasAlta)
+                if(this->listaAlumnos[i]->getNotaMedia() > notaMediaMasAlta)
                 {
-                     notaMediaMasAlta = mediaAlumno;
-                     nombreAlumno = this->listaAlumnos[i].getNombre(); //DUDA ACCEDER AL NOMBRE SE PUEDE HACER¿? AL SER DE LA CLASE PADRE¿
+                     notaMediaMasAlta = this->listaAlumnos[i]->getNotaMedia();
+                     nombreAlumno = this->listaAlumnos[i]->getNombre();
 
                 }
 
         }
     }
 
-    cout << "El Alumno con mejor nota es: " << nombreAlumno << " con nota media = " << notaMediaMasAlta << endl;
+    cout << "EL ALUMNO DE " << this->getNombre() << " CON LA MEJOR NOTA ES : " << nombreAlumno << " CON MEDIA = " << notaMediaMasAlta << endl;
 
-*/
+     cout << "---------------------------------------------------------------------------------" << endl;
 }
 

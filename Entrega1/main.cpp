@@ -57,13 +57,13 @@ void Calificando()
         /* APARTADO DE IMPRESION */
 
         juanjo.ImprimirListaYMedia();
-
+        juanjo.ImprimirAlumnoMejorNota();
 
 
 
         /* APARTADO DE PETICION */
-/*
-        string DNIIntroducido;
+
+/*        string DNIIntroducido;
         bool entradaCorrecta = true;
 
         do{

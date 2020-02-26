@@ -10,6 +10,12 @@ Student::~Student()
 
 }
 
+float Student::getNotaMedia()
+{
+    return this->media;
+
+}
+
 void Student::setNota(float nota)
 {
    this->listaNotas.push_back(nota);
@@ -47,7 +53,7 @@ void Student::ImprimirTodasNotas()
 {
     cout << "NOTAS : ";
 
-    for(int i = 0; i < this->listaNotas.size();i++) //recorro lista notas de cada alumno
+    for(int i = 0; i < (int)this->listaNotas.size();i++) //recorro lista notas de cada alumno
     {
         cout << this->listaNotas[i] << "  ";
     }
