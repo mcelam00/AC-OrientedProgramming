@@ -7,7 +7,7 @@ Teacher::Teacher(string nombre, string apellidos, string DNI):Person(nombre, ape
 
 Teacher::~Teacher()
 {
-    //no hay ningun atributo (p.ej tipo puntero que deba ser destruido)
+   listaAlumnos.clear();
 }
 
 void Teacher::setNuevoAlumnoEnLista(Student *alumno)

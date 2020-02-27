@@ -19,6 +19,7 @@ void Calificando()
         /* VECTOR POR SI TUVIERA MAS DE UN PROFESOR LA APLICACION */
 
         vector<Teacher *> profesores;
+        vector<Student *> listaAlumnosProfesorSubi;
 
 
         /* APARTADO CREACIÓN DE OBJETOS Y CÁLCULOS */
@@ -68,15 +69,16 @@ void Calificando()
        string DNIIntroducido;
         bool entradaCorrecta = false;
 
-        do{
+        do
+        {
             cout << "Por favor, introduzca un DNI de Usuario : ";
             cin >> DNIIntroducido;
 
             //primero miro si es un profesor y luego dentro de sus alumnos si no es
             for(int i = 0; i < (int)profesores.size(); i++)
             {
-                if(profesores[i]->getDNI() == DNIIntroducido){ //lo hemos encontrado y es profesor
-
+                if(profesores[i]->getDNI() == DNIIntroducido) //lo hemos encontrado y es profesor
+                {
                     entradaCorrecta = true;
                     profesores[i]->ImprimirListaYMedia();
                     profesores[i]->ImprimirAlumnoMejorNota();
@@ -84,22 +86,30 @@ void Calificando()
 
                 }else { //sino miro dentro de los alumnos del profesorSubi
 
-                    for(int j = 0; j < (int)profesores[i]->getListaAlumnos().size(); i++){
 
-                        if(profesores[i]->getListaAlumnos()[j]->getDNI() == DNIIntroducido){ //resulta que es un alumno
+                    listaAlumnosProfesorSubi = profesores[i]->getListaAlumnos(); //traigo 1 VEZ la lista de cada profesor
 
+                    for(int j = 0; j < (int)listaAlumnosProfesorSubi.size(); j++) //si pongo aqui la llamada al get, en cada iteracion me esta retornando y copiando el vector, resultando en que se me acaba la memoria. Entonces debo traerlo 1 sola vez, no 1 por cada iteracion
+                    {
+
+                        if(listaAlumnosProfesorSubi[j]->getDNI() == DNIIntroducido) //resulta que es un alumno
+                        {
                             entradaCorrecta = true;
-                            profesores[i]->getListaAlumnos()[j]->ImprimirDatosPersonales();
-                            profesores[i]->getListaAlumnos()[j]->ImprimirTodasNotas();
-                            profesores[i]->getListaAlumnos()[j]->ImprimirNotaMedia();
+                            listaAlumnosProfesorSubi[j]->getNombre();
+                            listaAlumnosProfesorSubi[j]->ImprimirTodasNotas();
+                            listaAlumnosProfesorSubi[j]->ImprimirNotaMedia();
                             break;
 
                         }
-                        //no es un alumno de este profesorSubi
+                            //no es un alumno de este profesorSubi
 
                     }
-                    cout << "ERROR: El DNI digitado, no corresponde a ningun usuario de la aplicacion" << endl;
 
+                    if(entradaCorrecta == false)
+                    {
+                        cout << "ERROR: El DNI digitado, no corresponde a ningun usuario de la aplicacion" << endl;
+
+                    }
 
                 }
 
@@ -108,20 +118,18 @@ void Calificando()
 
         }while(entradaCorrecta == false);
 
-
-
-
-
-           /* APARTADO DE DESTRUCCION */
+         /* APARTADO DE DESTRUCCION */
 
         delete pepito;
         delete jaimito;
         delete jorge;
         delete luis;
-
-
+        listaAlumnosProfesorSubi.clear(); //limpio el vector de alumnos
+        profesores.clear(); //limpio el vector de profesores
 
 }
+
+
 
 
 int main()

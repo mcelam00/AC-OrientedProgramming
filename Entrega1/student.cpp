@@ -8,6 +8,8 @@ Student::Student(string nombre, string apellidos, string DNI):Person(nombre, ape
 Student::~Student()
 {
 
+    listaNotas.clear();
+
 }
 
 float Student::getNotaMedia()
