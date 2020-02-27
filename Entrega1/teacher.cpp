@@ -15,6 +15,12 @@ void Teacher::setNuevoAlumnoEnLista(Student *alumno)
     this->listaAlumnos.push_back(alumno);
 }
 
+vector<Student *> Teacher::getListaAlumnos()
+{
+    return this->listaAlumnos;
+
+}
+
 void Teacher::AsignarNota(Student *alumno, float nota1)
 {
     alumno->setNota(nota1);
@@ -33,7 +39,7 @@ void Teacher::AsignarNota(Student *alumno, float nota1, float nota2, float nota3
     alumno->setNota(nota3);
 }
 
-float Teacher::ObtenerNotaMedia(Student *alumno)
+void Teacher::ObtenerNotaMedia(Student *alumno)
 {
     alumno->CalcularMedia(); //si hace falta repetir el parametro o puede usarse this
 }

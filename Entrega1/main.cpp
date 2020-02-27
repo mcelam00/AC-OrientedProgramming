@@ -10,14 +10,16 @@
 
 using namespace std;
 
-static vector<Teacher> profesores; //puedo hacerlo aqui o en el mismo calificando en cuyo caso tendra visibilidad local
 
-//
-//Funcion principal del programa, que crea los objetos, pide los datos...
-//
+
+/* Funcion principal del programa, que crea los objetos, pide los datos...*/
 
 void Calificando()
 {
+        /* VECTOR POR SI TUVIERA MAS DE UN PROFESOR LA APLICACION */
+
+        vector<Teacher *> profesores;
+
 
         /* APARTADO CREACIÓN DE OBJETOS Y CÁLCULOS */
 
@@ -33,7 +35,7 @@ void Calificando()
 
             //como solo creo un profesor (en el enunciado se especifica "del profesor") entonces lo hago sin new y me ahorro las reservas de memoria y aprovecho los recursos del compilador para optimizar el objeto al ser éste estático
         Teacher juanjo("Juanjo", "Campos", "12346600L");
-
+        profesores.push_back(&juanjo);
 
             //se añaden los alumnos al profesor
         juanjo.setNuevoAlumnoEnLista(pepito);
@@ -61,28 +63,54 @@ void Calificando()
 
 
 
-        /* APARTADO DE PETICION */
+        /* APARTADO DE PETICION DE DNI */
 
-/*        string DNIIntroducido;
-        bool entradaCorrecta = true;
+       string DNIIntroducido;
+        bool entradaCorrecta = false;
 
         do{
+            cout << "Por favor, introduzca un DNI de Usuario : ";
             cin >> DNIIntroducido;
 
-            //si recorremos el array de objetos y no se encuentra:
-            entradaCorrecta = false;
+            //primero miro si es un profesor y luego dentro de sus alumnos si no es
+            for(int i = 0; i < (int)profesores.size(); i++)
+            {
+                if(profesores[i]->getDNI() == DNIIntroducido){ //lo hemos encontrado y es profesor
 
-            //si por el contrario si lo encuentra y es de profesor:
-                //con el objeto extraido, llamo al metodo imprimirMediayLista de la clase teacher y al ImprimirAlumnoMejorNota
+                    entradaCorrecta = true;
+                    profesores[i]->ImprimirListaYMedia();
+                    profesores[i]->ImprimirAlumnoMejorNota();
+                    break;
 
-            //si es de alumno
-                //se imprimen los datos del alumno llamando al metodo imprimirdatos que va a estar en la clase padre
-                //sus notas obtenidas y su nota media
+                }else { //sino miro dentro de los alumnos del profesorSubi
+
+                    for(int j = 0; j < (int)profesores[i]->getListaAlumnos().size(); i++){
+
+                        if(profesores[i]->getListaAlumnos()[j]->getDNI() == DNIIntroducido){ //resulta que es un alumno
+
+                            entradaCorrecta = true;
+                            profesores[i]->getListaAlumnos()[j]->ImprimirDatosPersonales();
+                            profesores[i]->getListaAlumnos()[j]->ImprimirTodasNotas();
+                            profesores[i]->getListaAlumnos()[j]->ImprimirNotaMedia();
+                            break;
+
+                        }
+                        //no es un alumno de este profesorSubi
+
+                    }
+                    cout << "ERROR: El DNI digitado, no corresponde a ningun usuario de la aplicacion" << endl;
 
 
-        }while(entradaCorrecta == true);
+                }
 
-*/
+
+            }
+
+        }while(entradaCorrecta == false);
+
+
+
+
 
            /* APARTADO DE DESTRUCCION */
 

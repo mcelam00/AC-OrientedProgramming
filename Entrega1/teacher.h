@@ -15,6 +15,7 @@ public:
 
     /* GETTERS Y SETTERS */
     void setNuevoAlumnoEnLista(Student *alumno);
+    vector<Student *> getListaAlumnos();
 
     /* OTRAS FUNCIONES */
 
@@ -22,7 +23,7 @@ public:
     void AsignarNota(Student *alumno, float nota1, float nota2);
     void AsignarNota(Student *alumno, float nota1, float nota2, float nota3);
 
-    float ObtenerNotaMedia(Student *alumno);
+    void ObtenerNotaMedia(Student *alumno);
 
     void ImprimirListaYMedia();
     void ImprimirAlumnoMejorNota();
