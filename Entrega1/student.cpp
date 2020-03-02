@@ -8,7 +8,6 @@ Student::Student(string nombre, string apellidos, string DNI):Person(nombre, ape
 Student::~Student()
 {
 
-    listaNotas.clear();
 
 }
 
@@ -42,11 +41,8 @@ void Student::CalcularMedia()
 
     }
 
-    float mediaLocal;
 
-    mediaLocal = (sumaTotalNotas/tamanioListaNotas);
-
-    this->media = mediaLocal; //seteo en el atributo la media
+    this->media = (sumaTotalNotas/tamanioListaNotas); //seteo en el atributo la media
 
 
 }

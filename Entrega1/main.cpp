@@ -34,7 +34,7 @@ void Calificando()
 
 
 
-            //como solo creo un profesor (en el enunciado se especifica "del profesor") entonces lo hago sin new y me ahorro las reservas de memoria y aprovecho los recursos del compilador para optimizar el objeto al ser éste estático
+            //como solo creo un profesor entonces lo hago sin new y me ahorro las reservas de memoria y aprovecho los recursos del compilador para optimizar el objeto al ser éste estático
         Teacher juanjo("Juanjo", "Campos", "12346600L");
         profesores.push_back(&juanjo);
 
@@ -59,9 +59,13 @@ void Calificando()
 
         /* APARTADO DE IMPRESION */
 
-        juanjo.ImprimirListaYMedia();
-        juanjo.ImprimirAlumnoMejorNota();
 
+        for(int i = 0; i < (int)profesores.size(); i++)
+        {
+            profesores[i]->ImprimirListaYMedia();
+            profesores[i]->ImprimirAlumnoMejorNota();
+
+        }
 
 
         /* APARTADO DE PETICION DE DNI */
@@ -77,42 +81,52 @@ void Calificando()
             //primero miro si es un profesor y luego dentro de sus alumnos si no es
             for(int i = 0; i < (int)profesores.size(); i++)
             {
-                if(profesores[i]->getDNI() == DNIIntroducido) //lo hemos encontrado y es profesor
-                {
-                    entradaCorrecta = true;
-                    profesores[i]->ImprimirListaYMedia();
-                    profesores[i]->ImprimirAlumnoMejorNota();
-                    break;
 
-                }else { //sino miro dentro de los alumnos del profesorSubi
+               if(entradaCorrecta == false) //para controlar que si en los alumnos del primer profesor se ha encontrado salga
+               {
 
-
-                    listaAlumnosProfesorSubi = profesores[i]->getListaAlumnos(); //traigo 1 VEZ la lista de cada profesor
-
-                    for(int j = 0; j < (int)listaAlumnosProfesorSubi.size(); j++) //si pongo aqui la llamada al get, en cada iteracion me esta retornando y copiando el vector, resultando en que se me acaba la memoria. Entonces debo traerlo 1 sola vez, no 1 por cada iteracion
+                    if(profesores[i]->getDNI() == DNIIntroducido) //lo hemos encontrado y es profesor
                     {
+                        entradaCorrecta = true;
+                        profesores[i]->ImprimirListaYMedia();
+                        profesores[i]->ImprimirAlumnoMejorNota();
+                        break;
 
-                        if(listaAlumnosProfesorSubi[j]->getDNI() == DNIIntroducido) //resulta que es un alumno
+                    }else { //sino miro dentro de los alumnos del profesorSubi
+
+
+                        listaAlumnosProfesorSubi = profesores[i]->getListaAlumnos(); //traigo 1 VEZ la lista de cada profesor
+
+                        for(int j = 0; j < (int)listaAlumnosProfesorSubi.size(); j++) //si pongo aqui la llamada al get, en cada iteracion me esta retornando y copiando el vector, resultando en que se me acaba la memoria. Entonces debo traerlo 1 sola vez, no 1 por cada iteracion
                         {
-                            entradaCorrecta = true;
-                            listaAlumnosProfesorSubi[j]->getNombre();
-                            listaAlumnosProfesorSubi[j]->ImprimirTodasNotas();
-                            listaAlumnosProfesorSubi[j]->ImprimirNotaMedia();
-                            break;
+
+                            if(listaAlumnosProfesorSubi[j]->getDNI() == DNIIntroducido) //resulta que es un alumno
+                            {
+                                entradaCorrecta = true;
+                                listaAlumnosProfesorSubi[j]->getNombre();
+                                listaAlumnosProfesorSubi[j]->ImprimirTodasNotas();
+                                listaAlumnosProfesorSubi[j]->ImprimirNotaMedia();
+                                break;
+
+                            }
+                                //no es un alumno de este profesorSubi
 
                         }
-                            //no es un alumno de este profesorSubi
 
                     }
 
-                    if(entradaCorrecta == false)
-                    {
-                        cout << "ERROR: El DNI digitado, no corresponde a ningun usuario de la aplicacion" << endl;
+               }else{
 
-                    }
+                   break;
 
-                }
+               }
 
+
+            }
+
+            if(entradaCorrecta == false)  //no se ha encontrado al recorrer todos los profesores y sus alumnos
+            {
+                cout << "ERROR: El DNI digitado, no corresponde a ningun usuario de la aplicacion" << endl;
 
             }
 

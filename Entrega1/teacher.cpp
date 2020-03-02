@@ -86,7 +86,7 @@ void Teacher::ImprimirAlumnoMejorNota()
                 if(this->listaAlumnos[i]->getNotaMedia() > notaMediaMasAlta)
                 {
                      notaMediaMasAlta = this->listaAlumnos[i]->getNotaMedia();
-                     nombreAlumno = this->listaAlumnos[i]->getNombre();
+                     nombreAlumno = this->listaAlumnos[i]->getNombre() + this->listaAlumnos[i]->getApellidos();
 
                 }
 
